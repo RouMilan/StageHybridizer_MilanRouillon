@@ -190,3 +190,131 @@ Il possède cependant quelques limitations :
 - Le transfert de mémoire CPU <-> GPU est coûteux.
 - Les limitations vu auparavant.
 
+Prochain Onglet : Install 
+
+Première Option : aller sur le tutoriel d'installation plus guidé.
+
+Ensuite, on a encore une checklist rapide, aves les mêmes outils que sur la page tutoriel. Cette dernière 
+est vraiment très peu détaillée, ce qui est normal car elle s'adresse aux personnes déjà expérimentées. 
+
+Les constructeurs et les vérificateurs sont montrés tous d'un coup, et on peut les copier coller dans notre console.
+Seule différence de présentation, les vérificateurs ont le contexte ligne par ligne, afin que la personne qui utilise le 
+service sache quel est le problème avec son installation. 
+
+Meeting avec Monsieur Ramponi, le tuteur de stage : 
+
+On discute vite fait de l'avancée de la première journée, et on me donne comme tâche de créer un repository Github pour y déposer, 
+entre autre, ce fichier Mardown. On pourra utiliser ce repository dans la suite du stage pour y déposer d'autres fichier.
+
+Pendant ce meeting, nous avons aussi discuté du fait qu'il est primordial de vraiment comprendre comment fonctionne 
+un CPU et un GPU afin de comprendre comment marche le produit Hybridizer. Il est aussi très important 
+de connaître la différence entre les deux.
+
+On m'a également transmis le lien vers l'ancien site : https://docs.altimesh.com/articles/CUDABasicConcepts.html, afin 
+que je puisse comprendre mieux le fonctionnement du site actuel, ainsi que le produit.
+
+Première Tâche : Création de repository :
+
+Temps passé : 7 minutes
+
+Tâche réalisée : Depuis Visual Studio, j'ai pu facilement créer un nouveau repository sur le site en ligne GitHub,
+grâce à l'onglet Git dans Visual Studio. Le push, donc le fait d'envoyer cette page sur le site web s'est fait
+automatiquement et sans soucis.
+
+Question : Que fais concrètement un CPU ?
+
+Réponse : En anglais, le CPU s'appele le Central Processing Unit, aussi appelé microprocesseur.
+
+Physiquement, il s'agit d'une puce qui execute une suite de tâches appelées programmes. Cet dernière est composée de milliers de transistors.
+L'architecture sur lequelle cette puce repo se s'appelle l'architecture Von Neuman. 
+
+Si l'on décortique cette puce, elle est composée d'une unité de contrôle, et d'un unité de Logique Arithmétique.
+Sur les CPU de base, comme ils étaient au début, on retrouve un Data Bus, un Adress Bus, et un Control Bus.
+
+Question : À quoi sert le Data Bus ?
+
+Réponse : Le Data Bus sert à transférer les données de l'entrée à la sortie.
+
+Question : À quoi sert l'Adress Bus ?
+
+Réponse : L'Adress Bus sert à trouver l'endroit où il faut prendre ou envoyer les données.
+
+Question : À quoi sert le Control Bus ?
+
+Réponse : Le Control Bus sert à aller chercher les données et à les modifier.
+
+Le rôle d'un CPU se résume donc à prendre un Code Machine en entrée, qui, en passant par le CPU, aura une sortie prédéterminée.
+Pendant que cette transformation a lieu, le CPU communique toujours à la mémoire qui reste stockée.
+
+Le CPU fonctionne avec le cycle Fetch-Decode-Execute. Si l'on traduit ces trois étapes, on trouve : 
+
+Fetch : Le CPU cherche une instruction de mémoire, qui est sous forme de valeur.
+
+Decode : La valeur cherchée est ensuite traduite.
+
+Execute : La tâche est ensuite efectuée en fonction de la valeur traduite.
+
+Tout CPU fonctionne avec un signal horloge, qui est mesuré en GHz, ce qui lui permet de calculer des millers de fois par seconde.
+
+Pour mieux comprendre concrètement comment tout cela fonctionne, il faut faire un tableau de données présentes dans la RAM :
+
+Question : Qu'est-ce qu'une RAM ?
+
+Réponse : En anglais, on l'appelle la Random Access Memory, qui sert à stocker les données et programmes
+des programmes en cours d'utilisation. Le CPU lit et écrit très rapidement dans la RAM. Par exemple, 
+en ouvrant un logiciel, on retrouve les données chargées dans la RAM.
+
+Prenons ce tableau comme exemple : On a la RAM à gauche, et le CPU à droite :
+
+Adresse | Valeur      | |   Compteur Programme   | Instruction Retenue
+-----|--------        | |            
+0000 |  1010          | |                   0000 | 1010
+0001 |  1110          | |                   1010 | 0001
+0010 |  1000          | |                   0001 | 1110  
+1010 |  0001          | |                   1110 | XXXX
+
+Le compteur programme retient donc qu'à l'adresse 0000, il faut executer la valeur de 1010, et ainsi de suite. 
+Chaque valeur binaire comprends sa propre instruction, comme dit auparavant.
+
+Pour coder sur un CPU, il faut pouvoir lui donne run code qu'il comprends.
+De base, on a un fonctionnement qui ressemble à peu près à ça :
+
+                       Language assemblé 
+
+    Compréhensible par l'humain car composé de chiffres en base 10 et de lettres
+                                |
+                                v
+                            Frontend 
+                                |
+                                v
+                            Compilateur 
+        Traduit le langage assemblé en Code Machine, Binaire
+                                |
+                                v
+                              Backend
+                                |
+                                v
+                               CPU
+
+On peut maintenant s'intéresser au CPU modernes, qui sont beaucoup plus complexes. En effet, certains
+peuvent avoir plusieurs cores, qui peuvent chercher entres elles le cylce Fetch-Decode-Execute.
+Or, maintenant, ces cores peuvent maintenant se diviser en 2 pour créer des threads. Donc pour un 
+processeur à 4 cores, il peut maintenant s'occuper de 8 tâches à la fois.
+
+On peut maintenant aussi introduire la notion de Cache; ce sont des éléments de mémoire très faciles à atteindre 
+par le CPU, contenant des informations ou instructions réutilisables.
+
+Les processeurs d'aujourd'hui contiennent aussi des algorithmes qui peuvent anticiper la taille de mémoire 
+nécessaire qu'une certaine tâche pourrait prendre. Cela permet en avance de chercher plus vite les informations contenues
+dans la RAM.
+
+Un CPU peut également maintenant contenir des FPU, ou Floating Point Unit, qui permettent de faire des calculs mathématiques 
+très puissants.
+
+On peut maintenant également y trouver des IPU (Intelligence Processing Units), permettant de mieux comprendre
+lors du Machine Learning.
+
+Un élément très important que l'on retrouve dedans aujourd'hui sont les GPU.
+
+Question : Qu'est-ce donc un GPU ?
+
