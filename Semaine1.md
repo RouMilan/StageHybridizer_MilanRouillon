@@ -374,3 +374,59 @@ Réponse : SIMD signifie Single Instruction, Multiple Data. C'est un type d'opéra
 changements de données à partir d'une seule instruction. On peut donc voir le GPU comme une grand machine 
 SIMD spécialisée.
 
+Question : C'est quoi concrètement CUDA ?
+
+Réponse : Compute Unified Device Architecture. Il s'agit d'un langage qui ressemble à peu près au C,
+utilisé pour coder directement sur les carte sgraphiques NVIDIA. On appelle un CUDA core un coeur CUDA, 
+qui agit comme un mini-processeur capable de faire des opérations mathématique simple.
+
+On s'interesse maintenant à l'ancien site : https://docs.altimesh.com/articles/CUDABasicConcepts.html.
+
+On nous dit que les coeurs CUDA ne sont pas des coeurs de CPU. Ils agissent plus comme des chemins de
+SIMD, donc de systèmes plusieurs sorties pour une instruction.
+
+On nous montre ensuite un tableau sans trop de contexte, comparant les caractéristiques d'une carte graphique 
+et d'un micro-processeur. 
+
+Question : C'est quoi le CUDA threading ?
+
+Réponse : Il s'agit d'un modèle d'éxecution permettant de répartir un calcul sur des milliers de threads.
+L'idée est donc, au lieu d'avoir quelques gros threads sur le CPU, CUDA les transforme en pleins de petits threads qui traient indépendamment
+la requête demandée.
+
+Principe fondammental de CUDA : Organisation par Grid, Block, Warp et Thread. 
+
+On marquera que le signe "<" veut dire dedans. Exemple Volant < Voiture 
+
+Comme expliqué auparavant un thread est donc une tâche exécutée, qui peut agir sur un ou plusieurs coeurs.
+
+On a donc Thread < Warp < Block < Grid. En général, il n'y a qu'une seule Grid.
+
+On peut maintenant expliquer les fonctions threadIdx, blockIdx et BlockDimx;
+
+Sur le site, ce n'est pas très clair car il n'y a pas forcément d'explications sur ce à quoi ces fonctions correspondent.
+
+threadIdx : Numérotation du thread dans le bloc. On peut le retrouver facilement car les cases sont incrémentés dans l'ordre.
+
+blockIdx : Numérotation du Bloc dans la Grid. De la même manière que les threads, ils sont numérotés par ordre croissants donc faciles à retrouver.
+
+blockDim : Taille du bloc en threads. Par exemple, si chaque bloc possède 256 threads, blockDim sera toujours égal à 256.
+
+Logiquement, pour accéder à un thread en particulier, il faut donc utiliser l'opération suivante :
+On veut accéder au thread 133 du bloc 3, avec tous les blocs étant de dimension 256.
+
+int id = blockIdx.x * blockDim.x + threadIdx.x;
+
+Avec blockIdx = 3, blockDim = 256, threadIdx = 133. Nous sommes obligés de rajouter le .x après chaque fonction
+afin de bien être sûr d'accéder au résultat contenant l'entité x.
+
+Question : Que veut dire SM ?
+
+Réponse : Ce n'est pas précisé sur le site, mais SM signifie le Streaming Multiprocessor. Il s'agit de l'unité principale
+de calcul d'un GPU NVIDIA. Chaque GPU en contient plusieurs, et chaque SM contient plusieurs cores NVIDIA.
+Sur le site : "1 block run on a single SM", ce qui veut dire que chaque block ne fonctionne qu'avec un SM.
+Si j'ai bien commpris, il y a une faute d'orthographe. Sinon cela veut dire que je n'ai pas compris ce qu'est un Block Run.
+
+Problème dans les sites : on explique très brièvement threadIdx et blockIdx, mais jamais blockDim.
+
+
