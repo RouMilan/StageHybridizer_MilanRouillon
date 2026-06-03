@@ -318,3 +318,52 @@ Un élément très important que l'on retrouve dedans aujourd'hui sont les GPU.
 
 Question : Qu'est-ce donc un GPU ?
 
+En anglais, un GPU s'appelle un Graphics Processing Unit. 
+
+Pour faire simple, un GPU possède des milliers de coeurs plutot simples. Cela permet au GPU de calculer 
+une multitude de tâches à la fois. 
+
+Le GPU est surtout utile pour tout ce qui touche à la génération 3D, comme les jeux vidéos ou le montage vidéo.
+Récemment, on peut beaucoup l'utiliser pour l'intelligence artificielle ou les simulations scientifiques. 
+
+Dans son fonctionnement de base, le CPU prépare les informations avant de les envoyer au GPU, qui calculera 
+le reste des informations, avant de les envoyer sur l'écran.
+
+Par exemple, dans un jeu vidéo, le CPU prépare les objets, les positions ou encore la physique, et les
+envoie au GPU calcule l'éclairage et les textures, avant d'envoyer l'image finale qui sera montrée sur l'écran.
+
+Comme pour le CPU, le GPU possède une entité mémoire qui s'apelle la VRAM. 
+
+Question : Quelle est la différence entre la VRAM et la RAM ?
+
+Réponse : Un peu comme la différence basique entre le CPU et le GPU, la VRAM contient beaucoup plus de places 
+pour contenir beaucoup plus de données. 
+
+En effet, comme le GPU doit déplacer beaucoup plus de quantité de données graphiques chaque seconde, 
+il a besoin d'une mémoire différentes de celle du CPU. 
+
+Imaginons encore qu'on lance un jeu. Voici le chemin entier pour pouvoir afficher le jeu à l'écran :
+
+Les données du jeu sont en premier stockés sur le SSD. 
+
+Question : Quel est le rôle du SSD ?
+
+Réponse : En anglais, SSD veut dire Solid State Drive. C'est le composant qui sert à stocker toutes les données
+de manière permanentes. Contrairement à la RAM ou la VRAM, ces données restent présentes même lorsque l'ordinateur 
+est éteint. 
+
+Le SSD envoie ensuite les données à la RAM, afin que le CPU puisse accéder à ces mêmes données beaucoup plus rapidement, 
+Une fois que le CPU reçoit toutes les informations, il prépare une suite de commandes pour le GPU. 
+
+Une fois que le GPU reçoit ces commandes, il stocke les informations importantes dans sa VRAM, afin d'avoir accès aux données plus 
+rapidement lors de ces prochains calculs.
+
+Le GPU calcule ensuite l'image, envoie une image intermédiaire à la VRAM, puis envoie l'image à l'écran.
+Lors du calcul de l'image, chaque coeur du GPU s'occupe d'un ou de quelques pixels, et calcule par exemple 
+sa couleur, son éclairage, ou encore ses ombres.
+
+On a vu tout à l'heure que certains CPU modernes pouvaient contenir un GPU integré. Ceci est vrai, mais ce n'est pas l'architecture
+la plus performante. Si le GPU se trouve dans la même puce que le CPU, alors il ne peut pas possèder sa propre VRAM, 
+et est donc contraint d'utiliser la RAM. 
+
+C'est donc une solution qui est plus utile si on veut économiser de l'espace par exemple.
