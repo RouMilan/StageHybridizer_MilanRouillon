@@ -367,3 +367,10 @@ la plus performante. Si le GPU se trouve dans la même puce que le CPU, alors il 
 et est donc contraint d'utiliser la RAM. 
 
 C'est donc une solution qui est plus utile si on veut économiser de l'espace par exemple.
+
+Question : C'est quoi une SIMD ?
+
+Réponse : SIMD signifie Single Instruction, Multiple Data. C'est un type d'opération qui permet d'effectuer plusieurs 
+changements de données à partir d'une seule instruction. On peut donc voir le GPU comme une grand machine 
+SIMD spécialisée.
+
