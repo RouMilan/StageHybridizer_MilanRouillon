@@ -429,4 +429,97 @@ Si j'ai bien commpris, il y a une faute d'orthographe. Sinon cela veut dire que 
 
 Problème dans les sites : on explique très brièvement threadIdx et blockIdx, mais jamais blockDim.
 
+Dans l'ancien site, on continu ensuite de nous expliquer le fonctionnement en code CUDA, ce qui nous 
+interèsse moins que ce qui se trouve sur le site docs Hybridizer.
+
+En effet,on va maintenant retourner sur l'autre site, dans l'onglet Core Concepts.
+
+Cet onglet décrit donc les concepts fondammentaux. Décortiquons la première phrase du site, qui paraît compliquée à la première lecture.
+La présentation se fait en trois parties; 
+
+- Comment les tâches de calcul sont répartis sur les différents composants.
+- Le rôle des kernels et des points d'entrée.
+
+Définition Kernels : Fonctions conçues pour s'executer en parrallèle sur un GPU. Ici, la phrase "s'executer en parrallèle" 
+se traduit pas le fait d'envoyer une tâche qui est faites plein de fois en simultané. Il s'agit donc d'un système en SIMD.
+
+Définition Points d'entrée : Il ss'agit de l'endroit où le GPU commence son execution du programme.
+
+- On nous explique aussi qu'on trouvera la syntaxe du code, ou les abstractions que le Hybridizer permet de mettre 
+- en place pour faciliter son utilisation.
+
+On commence donc avec le moyen avec lequel le travail est distribué aux nombreux composants disponibles :
+
+Le Hybridizer peut donner plusieurs approches avec plusieurs niveaux de contrôle.
+
+Le modèle Work Grid : Comme vu auparavant, il est possible de séparer notre problème en Grid, Blocks, et Threads.
+On appele en OpenCL les blocks les Work Groups, et les threads les Work Items. 
+
+Question : C'est quoi OpenCL ?
+
+Réponse : Il s'agit d'un type de langage, qui, comme Hybridizer, peut fonctionner sur plusieurs composants.
+La différence reste dans le fait qu'il faut réecrire son code existant pour le faire marcher, Alors qu'avec 
+le Hybridizer, il n'y a pas besoin de changer son code pour qu'il soit adapté à tous les composants.
+
+Blocage sur le tableau du passage de CUDA au Vecteur Hybridizer : On ne nous parle jamais de vecteurs auparavant, 
+et le terme peut rendre les utilisateurs confus au premier abord.
+
+Question : C'est quoi le Hybridizer Vector ?
+
+Réponse : Il s'agit d'un terme très proche de SIMD, où une entrée vectorielle correspond à une instruction donnée en SIMD.
+
+On a donc les Blocks CUDA qui deviennent des Threads Hybridizer, et les Threads CUDA qui deviennent des Entrées Vectorielles Hybridizer.
+Prenons par exemple ce code : 
+
+[EntryPoint]
+public void Square(int count, double[] a, double[] b)
+{
+    for (int k = threadIdx.x + blockDim.x * blockIdx.x; 
+         k < count; 
+         k += blockDim.x * gridDim.x)
+    {
+        b[k] = a[k] * a[k];
+    }
+}
+
+On retrouve ici le [EntryPoint], qui sert à mettre en marche le GPU.
+Ensuite, on a une méthode de Void prenant en initialisation deux tableaux.
+
+Intéressons nous à la boucle for du programme; 
+
+Lorsqu'on prends en entrée le thread 0 du block 0, on a threadIdx = blockIdx = 0.
+
+Dans ce cas là, on a k = 0. k est incrémenté de (taille du block)*(taille du thread) afin de bien faire toutes 
+les opérations nécessaires en même temps, sans passer deux fois sur le même, ni en en manquant. 
+
+La boucle s'arrête quand k dépasse la valeur count, qui est la taille des tableaux rentrés en paramètre.
+
+Le but de ce code est plutôt facile, car ils'agit uniquement de mettre le tableau au carré le tableau a,
+en le transposant dans le tableau b.
+
+On nous présente ensuite le constructeur Parallel.For. Sur le site, on nous dit que ce constructeur est 
+une méthode statique avec une implementation interne. 
+
+Je ne comprends pas le reste des explications. 
+
+Voici le code :
+
+[EntryPoint]
+public static void RunParallelFor(int[] input, int[] output, int size)
+{
+    Parallel.For(0, size, i => output[i] = input[i] + 1);
+}
+
+Enfait, la structure du code fais exactement la même chose que le code d'avant, mais est cette fois-ci beaucoup plus facile à écrire.
+Cependant, au lieu de mettre tous les éléments du tableau au carré, il rajoute 1 à toutes les cases. 
+Si il faisait exactement la même chose que le tableau d'avant, le code aurait prit cette forme :
+
+[EntryPoint]
+public static void RunParallelFor(int[] input, int[] output, int size)
+{
+    Parallel.For(0, size, i => output[i] = input[i] * input[i]);
+}
+On nous présente ensuite la différence entre SIMD et SIMT. Ces deux concepts sont très similaires, mais 
+le SIMT remplace le Data par Threads. On en conclut donc que le SIMT est utilisé surtout sur GPU, 
+et le SIMD est utilisé surtout sur les CPU.
 
