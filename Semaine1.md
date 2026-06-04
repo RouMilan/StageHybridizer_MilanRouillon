@@ -569,8 +569,73 @@ On nous montre ensuite un tableau avec des Options de COnfiguration Clés, qui so
 Remarque : à part le nom des méthodes et une très petite explication, on nous montre pas du tout comment les integrer
 dans le code, car ils ne sont pas du tout inclus dans le code donné en exemple. 
 
-Remarque : On nous dit qu'il existe des tableau de type Hybridizer, mais nous n'en avons jamais entendu parler, 
+Remarque : On nous dit qu'il existe des tableaux de type Hybridizer, mais nous n'en avons jamais entendu parler, 
 l'utilisateur peut donc se demander à quoi ces derniers servent-ils.
+
+On a ensuite un tableau avec les différentes "Flavors" que le Hybridizer peut traduire. En effet, pour le
+Flavor CUDA, le code C est traduit en code nvcc, et produit internallement des fichiers en .cu/.cuh.
+
+Pour OMP, le code C est traduit en g++ -fopenmp, et pour l'AVX, le code C est traduit en g++ -mavx.
+
+Question : C'est quoi OMP ?
+
+Réponse : Il s'agit d'une abréviation pour OpenMP. C'est une API pour faire du multithreading sur CPU. 
+
+Question : C'est quoi une API ?
+
+Réponse : En anglais, Application Programming Interface. Il s'agit de l'ensemble de fonctions déjà écrites
+dans le programme utilisables sans avoir à recoder soi-même.
+
+Question : C'est quoi du multithreading ?
+
+Réponse : C'est un concept assez simple, qui consiste à diviser le travail entre plusiquers coeurs CPU 
+pour tout faire en même temps au lieu de l'un après l'autre. 
+
+Question : C'est quoi l'AVX ? 
+
+Réponse : En anglais ; Advanced Vector Extensions. C'est l'instruction SIMD, codée directement en C/C++.
+Cette manière de programmer est beaucoup plus complexe, car il faut gérer les registres manuellement.
+
+Le site nous présente ensuite Hybridizer Community Edition, avec un commentaire disant que toutes ces étapes
+sont disponibles sur Visual Studio en installant cette version.
+
+Remarque : On a l'impression que cette partie n'a pas été completée, car on ne sait pas si il s'agit d'un package
+NuGet (même si on s'en doute), ou de quelque chose d'autre.
+
+Onglet Data Marshalling : 
+
+Question : C'est quoi le Data Marshalling ?
+
+Réponse : Le Data Marshalling décrit comment sont transférées les données entre l'hôte (le CPU) et l'outil 
+(le GPU). Afin d'avoir de bien meilleure performances, il est crucial de bien comprendre ce concept.
+
+On nous montre ensuite les différents types de tableau supportés par le Hybridizer. On remarque que les types de base 
+(float, double, int, long) sont copiés facilement au GPU. La seule différence reste les tableau de struct.
+
+Question : Qu'est-ce-qu'un tableau de struct ?
+
+Réponse : un struct est une valeur qui dépend de plusieurs paramètres. Par exemple, un point dans un espace 3D.
+
+Dans ce cas précis, les tableaux de structs sont beaucoup plus lents que les autres tableaux. 
+
+En effet, ils sont plus compliqués à transférer du CPU au GPU, comme on peut voir dans cet exemple :
+
+public struct Vector3
+{
+    public float X, Y, Z;
+}
+
+[EntryPoint]
+public static void Transform(Vector3[] points, int n)
+{
+    // Vector3[] is marshalled as contiguous memory
+}
+
+La phrase "marshalled as continguous memory" veut dire que le tableau Vector3 est transféré par mémoire contigüe, 
+ce qui se traduit en langage commun par transféré tout d'un coup. 
+
+Titre : Memory Transfer Diagram : 
+
 
 
 
