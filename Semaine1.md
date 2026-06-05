@@ -634,7 +634,42 @@ public static void Transform(Vector3[] points, int n)
 La phrase "marshalled as continguous memory" veut dire que le tableau Vector3 est transféré par mémoire contigüe, 
 ce qui se traduit en langage commun par transféré tout d'un coup. 
 
-Titre : Memory Transfer Diagram : 
+Conclusion de compréhension Semaine 1: 
+
+Au terme de cette première semaine, j'ai pu acquérir une compréhension globale du produit Hybridizer. 
+J'ai donc pu commencer à le comprendre sur le plan technique et aussi comment il affecte son écosystème.
+
+Pour faire simple, Hybridizer est un compilateur-traducteur : Il permet d'écrire en du code en C# 
+qui sera automatiquement traduit pour marcher sur plusieurs composants (Comme les CPU et les GPU).
+
+Cela permet donc de coder directement sur ces composants sans avoir à apprendre les langages propres 
+(CUDA pour le GPU, AVX pour le CPU). Ce processus de transformations se fait sur plusieurs étapes, 
+et permet d'écrire en plusieurs "flavors", qui sont les langages cibles de chaque composant.
+
+Pour mieux comprendre l'utilité du produit, il faut connaître la différence fondamentale de fonctionnement entre 
+un CPU et un GPU. Je sais dorénavant qu'un CPU peut calculer peu d'opérations de manière très rapide, et 
+qu'un GPU peut s'occuper de milliers de commandes en simultané, à une vitesse plus petite que le CPU. Le 
+but de l'Hybridizer est donc de proposer un code unique qui pour les deux, en se servant de leur complémentarité.
+
+J'ai également pu prendre conscience des limites de ce produit; Beaucoup de structures de code ne peuvent
+pas être supportés (classes instanciées, chaînes de caractères, récursivité...), et que le transfert de données en 
+Data Marshalling peut avoir un impact sur les performances de l'ordinateur.
+
+Pour ce qui est de l'analyse du dépôt GitHub et de la documentation, j'ai pu relever plusieurs points 
+d'amélioration : La documentation est parfois peu claire ou incomplète, et il y a des issues non traitées
+dêpuis plusieurs années sur le GitHub. De plus, sur le GitHub, il y a des manques signalés par GitHub lui-même, 
+comme la Security Policy, ou le Pull Request Template qui ne sont pas faites. Ces observations me donnent une
+vraie piste de travail concrète pour la suite du stage.
+
+Enfin, j'ai pu mettre en place mon environnement de travail, en installant Markdown sur mon Visual Studio, 
+et en créant un repo GitHub, accessible par mon tuteur de stage. Ces outils vont me permettre de bien continuer 
+mon stage, car je vais pouvoir en faire une bonne partie dans le même fichier Visual Studio. 
+Grâce aux questions que je me suis posé, sur les différentes abréviations ou les mots que je ne connassait pas, 
+je possède maintenant beaucoup plus de connaissances sur le produit Hybridizer. Ces connaissances vont me permettre d'être
+beaucoup plus efficace pour ma première installation de produit la semaine prochaine.
+
+
+
 
 
 
