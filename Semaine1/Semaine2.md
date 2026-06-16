@@ -103,3 +103,65 @@ Se fait avec les mêmes étapes que le .NET Desktop, donc assez facile à faire,
 
 Remarque : Depuis le site, il n'y a que très peu d'indications précises avec ce qu'il faut faire depuis Visual Studio Installer.
 
+étape 5 : installation de Hybridizer :
+
+Il faut créer une nouvelle console projet .NET 8 et ajouter la ligne écrite en dessous.
+
+Le plus facile pour moi a été de télécharger Hybridizer.Runtime.CUDAImports depuis la gestion 
+de packages NuGets depuis Visual Studio. 
+
+Sur cette étape, l'installation se fait vraiment facielemtn pour les utilisateurs de Visual Studio 2022+
+
+étape 6 (et dernière) : Vérification de l'installation complète depuis le Program.cs :
+
+Point très utile : Bouton pour copier le code d'un coup, disponible partout sur la page.
+
+Une fois le code copié dans le fichier program.cs, on trouve ensuite ce qui se trouve sous build and run; 
+
+dotnet build
+dotnet run
+
+Nous n'avons aucune indication sur où est ce qu'il faut copier ces deux petites lignes.
+ 
+On essaye donc d'écrire ces deux lignes dans le terminal de Visual Studio, mais on obtient des erreurs de construction.
+
+En effet, le problème relevé est : Impossible d'appliquer l'opérateur '/' aux opérands de type size_t et int.
+
+En effet, cette erreur se trouve aussi dans la liste d'erreur présente en bas de la page Visual Studio.
+
+On note d'ailleurs que cette erreur n'est pas une erreur 'type' présentée dans la liste de TroubleShooting.
+ 
+On essaye en supprimant la ligne problématique, qui est la ligne du calcul de la mémoire. 
+
+Le problème se répète, je ne peux pas build, et un message qui apparaît souvent dans le terminal 
+est celui du fait qu'il "n'existe" aucun projet à executer. 
+
+Conseils de Claude (l'IA) : Ouvre le terminal directement depuis ton projet dans VS :
+
+Clic droit sur le projet dans l'Explorateur de solutions → Ouvrir dans le terminal
+
+Il se place automatiquement au bon endroit, puis tape dotnet run
+
+On suit ces conseils;  dotnet build fonctionne, mais il y a le même problème pour le dotnet run. Il y a également 
+toujours un problème de compilation dans le Program.cs. 
+
+J'essaye en installant aussi le NuGet de Hybridzer d'Altimesh, pour voir si quelque chose change. 
+
+Rien ne change, le problème vient donc surement de ma gestion de dossier du projet.
+
+Je continue de chercher les erreurs possibles, mais je n'ai pas l'impression que l'erreur viennent de mon 
+PC. 
+
+Je me concentre sur l'erreur de compilation dans le programme pris de la doc, dans Program.cs.
+
+En continuant de chercher la solution avec Claude, j'ai remplacé la ligne :
+
+Console.WriteLine($"Memory: {prop.totalGlobalMem / (1024 * 1024)} MB");, Par :
+
+Console.WriteLine($"Memory: {(ulong)prop.totalGlobalMem / (1024ul * 1024ul)} MB");
+
+Et l'erreur s'est résolue.
+
+On a maintenant une autre erreur : À la ligne du dynamicWrapper, on a l'erreur : 
+
+System.ApplicationException : 'Cannot create an instance of HybRunner with parameterless constructor without HybRunnerDefaultSatelliteNameAttribute set'
