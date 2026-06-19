@@ -165,3 +165,6 @@ Et l'erreur s'est résolue.
 On a maintenant une autre erreur : À la ligne du dynamicWrapper, on a l'erreur : 
 
 System.ApplicationException : 'Cannot create an instance of HybRunner with parameterless constructor without HybRunnerDefaultSatelliteNameAttribute set'
+
+On continue de chercher, je comprends qu'il faut que le code reçoit des paramètres, mais je n'ai aucune idée d'où il faut qu'il 
+les reçoit. 
