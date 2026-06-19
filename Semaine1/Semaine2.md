@@ -168,3 +168,62 @@ System.ApplicationException : 'Cannot create an instance of HybRunner with para
 
 On continue de chercher, je comprends qu'il faut que le code reçoit des paramètres, mais je n'ai aucune idée d'où il faut qu'il 
 les reçoit. 
+
+Après un appel avec mon tuteur de stage, on s'est rendus compte que le problème était trop compliqué à gérer, et que je vais maintenant
+essayer de faire l'installation sur Visual Studio Code.
+
+Je vais donc devoir découvrir et prendre en main ce nouveau moyen de coder. Je vais donc suivre la suite de commandes décrite dan ske site Hybridizer.io, 
+en suivant le tuto d'installation disponible sur ce site. 
+
+J'installe donc git depuis le site officiel, en installant la version pour Windows. L'installation semble s'être passée correctement.
+
+On peut donc réessayer de copier coller la première ligne disponible dans le tuto du site Hybridizer dans VSCode. 
+
+Afin de prendre en main VSCode de la meilleure manière, je vais devoir m'aider d'agents IA pour m'expliquer comment bien démarrer.
+
+Je relance VSCode, et j'essaye de tester avec git --version pour vérifier que git est bien installé. C'est le cas, donc je peux
+réessayer de suivre le tuto. 
+
+La ligne de commande a marché, je suit le reste du tuto pourvoir si je présente des blocages.
+
+Tout se passait bien jusqu'à ce que je tombe sur la ligne de commande : dotnet build --configuration Release, 
+après avoir opéré le switch.
+
+Je continue de chercher ou est ce que le problème se trouve; en commençant par vérifier si mon application CUDA est bien installée.
+
+Selon l'agent IA, j'ai deux problèmes : 
+
+(A) Le PATH n'est pas configuré pour CUDA 13.3
+(B) Hybridizer veut une version 13.0 précise, que tu n'as pas
+
+Je commence par vérifier le path de CUDA 13.3. Je suis cette liste de commande : 
+Vérifie d'abord que le dossier bin existe bien :
+dir "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.3\bin"
+Si oui, ajoute-le au PATH système :
+
+Tape Modifier les variables d'environnement système dans la recherche Windows et ouvre ce panneau.
+Clique sur "Variables d'environnement..."
+Dans la section "Variables système", sélectionne Path → Modifier
+Nouveau → ajoute :
+
+   C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.3\bin
+
+Valide partout avec OK.
+Ferme complètement VS Code et rouvre-le (le PATH ne se recharge qu'au démarrage du terminal).
+
+Puis vérifie :
+nvcc --version
+Tu devrais maintenant voir s'afficher la version 13.3.
+
+J'ai l'impression que ça marche et qu'on avance. Je lance le fichier Directory.Build.props, et je remplace la version de base 
+de CUDA, qui était de base en 13.0 par 13.3. Je reessaye ensuite de reconstruire.
+
+Cela ne fonctionne toujours pas. Je vais installer CUDA 13.0.
+
+Rien ne semble marcher, j'attends donc l'appel avec mon tuteur pour voir si on peut trouver une solution.
+
+En attendant, je charge mes fichiers VS2022 sur VSCode, pour pouvoir éditer mes fichiers depuis VSCode. L'intégration s'est très bien faite, 
+donc je vais commencer à éditer mes fichiers markdown depuis VSCode.
+
+Une fois que j'enregistre mes fichiers sur VS2022, et que je commit+push sur Github, je constate que mes fichiers sur VSCode n'ont pas changé.
+Il faut donc que je trouve la commande pour pouvoir pull depuis VSCode.
