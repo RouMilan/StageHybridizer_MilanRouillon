@@ -133,7 +133,7 @@ On essaye donc d'écrire ces deux lignes dans le terminal de Visual Studio, mais
 En effet, cette erreur se trouve aussi dans la liste d'erreur présente en bas de la page Visual Studio.
 
 On note d'ailleurs que cette erreur n'est pas une erreur 'type' présentée dans la liste de TroubleShooting.
- 
+# Résolution du problème de Compilation 
 On essaye en supprimant la ligne problématique, qui est la ligne du calcul de la mémoire. 
 
 Le problème se répète, je ne peux pas build, et un message qui apparaît souvent dans le terminal 
@@ -258,6 +258,8 @@ Modifications faites pour l'instant :
 
 >Installation de l'extension yzhang.markdown-all-in-one, recommandée par l'IA
 >
+
+
 >Ajout de la hiérarchie des titres 
 >
 >Mise en gras des problèmes et des remarques 
@@ -269,3 +271,59 @@ Modifications faites pour l'instant :
 Il me reste plus qu'à commit et push ces modifications. 
 
 Je vais donc me remmettre à essayer d'installer Hybridizer.
+
+Après l'appel avec mon tuteur, on a décidé qu'il serait préférable si je teste d'abord depuis CUDA directement, en essayant avec des tests classiques.
+
+Nous avons également déterminé que le problème venait du nvrtc, ce qui est assez compliqué à réparer, 
+et il faut donc essayer de voir si le problème vient d'un paramètre de mon PC/de mon GPU, ou si il s'agit d'un problème de mon, installation CUDA. 
+
+Il faut donc que j'ouvre CUDA depuis mon navigateur. 
+
+En demandant à un agent IA, il ne comprends pas ce que cette commande veut signifier.
+
+J'essaye donc d'installer le toolkit de mon côté, avec la version 13.0.
+
+Je vais donc refaire des petits tests très simples pour vérifier, depuis mon prgogramme Visual Studio.
+
+Il faut que j'installe le package NuGet **ManagedCuda**.
+
+**Problème : Mon Visual Studio crash dès que j'essaye d'accéder aux packages NuGets de la Solution**
+
+Je ne sais pas si c'est lié à l'installation de Hybridizer, masi à chaque fois que j'essaye d'accèder aux packages, mon VS2022 crash.
+
+Je supprime le NuGet Hybridizer via mon terminal, et j'essaye d'y re-accèder. Pas de chance, VS2022 se referme et je ne peux rien faire à part enlever la fenêtre.
+
+Tant pis, j'installe le package **ManagedCuda**, et j'essaye de voir si mon CUDA fonctionne correctement, avec ce code : 
+```csharp
+using ManagedCuda;
+
+class Program
+{
+    static void Main()
+    {
+        int deviceCount = CudaContext.GetDeviceCount();
+        Console.WriteLine($"Nombre de GPU détectés : {deviceCount}");
+
+        if (deviceCount > 0)
+        {
+            var ctx = new CudaContext(0);
+            Console.WriteLine($"GPU utilisé : {ctx.GetDeviceName()}");
+        }
+    }
+}
+```
+le package Managed CUDA semble fonctionner, et je retrouve bien les bonnes info grâce au code fourni ici. Par contre, mon VS2022 n'arrive toujours pas à ouvrir la page des packages NuGets.
+
+J'essaye donc de voir si cette page fonctionne sur d'autres projets C# faits au préalable. 
+
+Le problème semble donc être réservé à mon projet en particulier. 
+
+J'essaye donc que le terminal me montre la liste des packages installés sur mon projet avec : 
+
+>dotnet list package
+
+Mais la sortie ne donne rien, j'en conclut qu'il y a donc un problème grave avec ma solution. 
+
+Je suis complètement perdu et je ne sais plus quoi faire pour arranger la chose. 
+
+Je vais donc continuer de m'exercer en CUDA simple. 
