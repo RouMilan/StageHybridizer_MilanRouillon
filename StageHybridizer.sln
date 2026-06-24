@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.37314.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Semaine1", "Semaine1\Semaine1.csproj", "{930DCE1B-0741-40D2-8C81-D7AAA1B85C50}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFirstHybridizer", "Semaine1\MyFirstHybridizer\MyFirstHybridizer.csproj", "{8EF2B2A9-6CD8-428B-7850-37DA668D6002}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Éléments de solution", "Éléments de solution", "{9C8CB701-102D-CF49-A3E0-89AC09D42C2C}"
 	ProjectSection(SolutionItems) = preProject
-		Semaine1.md = Semaine1.md
+		Semaine1\Semaine1.md = Semaine1\Semaine1.md
+		Semaine1\Semaine2.md = Semaine1\Semaine2.md
+		Semaine1\Semaine3.md = Semaine1\Semaine3.md
 	EndProjectSection
 EndProject
 Global
@@ -16,10 +18,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{930DCE1B-0741-40D2-8C81-D7AAA1B85C50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{930DCE1B-0741-40D2-8C81-D7AAA1B85C50}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{930DCE1B-0741-40D2-8C81-D7AAA1B85C50}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{930DCE1B-0741-40D2-8C81-D7AAA1B85C50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EF2B2A9-6CD8-428B-7850-37DA668D6002}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EF2B2A9-6CD8-428B-7850-37DA668D6002}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EF2B2A9-6CD8-428B-7850-37DA668D6002}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EF2B2A9-6CD8-428B-7850-37DA668D6002}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
