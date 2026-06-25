@@ -12,6 +12,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Éléments de solution", "�
 		Semaine1\Semaine3.md = Semaine1\Semaine3.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1935384C-86F7-4017-AAB7-5EDF27AF9CC2}"
+	ProjectSection(SolutionItems) = preProject
+		Semaine1\Semaine1.md = Semaine1\Semaine1.md
+		Semaine1\Semaine2.md = Semaine1\Semaine2.md
+		Semaine1\Semaine3.md = Semaine1\Semaine3.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
