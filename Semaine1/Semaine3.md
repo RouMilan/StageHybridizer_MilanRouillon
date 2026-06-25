@@ -180,4 +180,28 @@ ce qui n'était pas mon cas.
 Je vais maintenant cloner le repo github de Hybridizer, pour commencer à me familiariser avec le code des sites, 
 tout en essayant les exemples donnés sur mon PC portable, pour voir si ces derniers fonctionnent .
 
-Depuis l'autre PC, j'ai réussi le clonage du repo, je vais maintenant faire un commit simple pour tester.
+Depuis l'autre PC, j'ai réussi le clonage du repo Semaine 1, je vais maintenant faire un commit simple pour tester.
+
+Tout s'est bien passé, j'ai même créé une nouvelle branche depuis ce pc pour gérer les push depuis le github.
+
+Je vais maintenant faire la même chose pour le repo Hybridizer, pour voir si je peux également faire des pulls requests.
+
+Voici les étapes : 
+
+> git clone https://github.com/RouMilan/hybridizer-io.github.io.git
+
+> git remote add upstreamhttps://github.com/RouMilan/hybridizer-io.github.io.git
+
+> git remote -v
+
+> git checkout -b Modifications_Milan_
+
+Une fois ça fait, j'ai commencé à faire quelques petites modifications sur le fichier setup du site.
+
+Je me familiarise aussi avec le style d'écriture du site, comme par exemple les hyperliens et les tableaux.
+
+En faisant mon premier commit, 
+
+Je pense vraiment continuer à modifier la doc demain, je profite du fait d'être sur mon PC Portable pour tester les exemples 
+dans basic-samples.
+
