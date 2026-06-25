@@ -179,3 +179,5 @@ ce qui n'était pas mon cas.
 
 Je vais maintenant cloner le repo github de Hybridizer, pour commencer à me familiariser avec le code des sites, 
 tout en essayant les exemples donnés sur mon PC portable, pour voir si ces derniers fonctionnent .
+
+Depuis l'autre PC, j'ai réussi le clonage du repo, je vais maintenant faire un commit simple pour tester.
