@@ -205,3 +205,19 @@ En faisant mon premier commit,
 Je pense vraiment continuer à modifier la doc demain, je profite du fait d'être sur mon PC Portable pour tester les exemples 
 dans basic-samples.
 
+On sait déjà que **HelloWorld** et **InOut** fonctionne, donc on passe aux autres
+On va donc vérifier petit à petit le fonctionnement des basic-samples : 
+
+Test **Intrinsics** : A priori pas de soucis, mais il n'y a pas de sortie prévue dans le code source.
+
+J'ai l'impression de mal comprendre ce que fait le programme. 
+
+En demandant à un agent IA, on comprends que ce code essaye d'approximer la valeur de exponentielle.
+
+À faire : écrire une ligne pour qu'il y ait une sortie.
+
+Test **Malloc** : De la même manière que le précédent, on a pas de sortie, ce qui n'est pas étonnant car il n'y apas de Writeline dans le code.
+
+Test **Mandelbrot** : Cette fois ci on a bien une sortie, et on nous compare deux temps différents pour l'execution de la tâche.
+
+Test **¨Printf** : 
