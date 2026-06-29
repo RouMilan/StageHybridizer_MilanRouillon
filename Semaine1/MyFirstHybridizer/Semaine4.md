@@ -48,7 +48,9 @@ On lit bien "OK" dans notre terminal.
 Test **Reduction** : Ce code est censé calculer la somme d'un très grand tableau (33 millions de cases)
 en utilisant une approchge Grid-Stripe loop. 
 
-Le résultat est donc : ![Resultats Tests](Reduction.jpg) 
+Le résultat est donc : 
+
+![Resultats Tests](Reduction.jpg) 
 
 Définition Grid-Stride loop : Il s'agit d'une boucle où chaque thread GPU traite 
 plusieurs éléments du tableau en faisant des bonds en avant. En effet, quand il n'y a pas assez de threads pour faire 
@@ -71,6 +73,73 @@ Il faut donc réparer ce code, ou expliciter comment mieux l'utiliser.
 
 /!\ À réparer dans la documentation /!\
 
+Test **Sobel_2D** : Ce code est différent du premier, car il utilise une structure rigide, 
+où l'image doit obligatoirement être en 512x512. Le code est donc plus simple, car il n'a pas besoin 
+de calculer/utiliser la largeur et la longueur de l'image.
 
+De plus, ce code serait censé ouvrir l'image, sauf que rien ne s'ouvre dans mon cas, 
+et le code ne semble pas compiler.
 
- 
+Je dois donc demander à mon tuteur comment faire marcher ces codes.
+
+/!\ À réparer dans la documentation /!\
+
+### Passage au tests Maths :
+
+Test **ConjugateGradient** : Ce code utilise l'algorithme du Gradient Conjugué, 
+Il résout le système linéaire Ax = B, où A est une matrice creuse.
+
+En terme de sortie, nous avons une suite de chiffres décroissantes qui s'écrivent à la suite. J'en conclut donc qu'il y a un problème, car ce décompte ne s'arrête jamais.
+
+Dans le code, il est précisé que la convergence est très lente, donc c'est peut être normal après tout.
+
+Je dois donc demander à mon tuteur si c'est quelque chose de normal.
+
+Test **Mandelbulb** : Ce code est censé calculer la puissance de la carte graphique.
+
+Lors du calcul, la compilation nous précise qu'il faut que le GPU soit CUDA-Compatible, et donne des informations 
+sur comment y accéder. Comme c'est la première fois que je compile, 
+je n'ai pas pu suivre les instructions.
+
+Je fais donc ce que me dit la sotie, et je réessaye.
+
+Cette fois-ci, la compilation ne fonctionne toujours pas.
+
+Une fois qu'on a fait la manipulation demandée, on se retrouve avec ces informations dans le terminal :
+
+![Resultats Tests](Mandelbulb2.jpg) 
+
+De plus, une autre fenêtre s'ouvre et montre une sorte de graine qui est difficile à décrire :
+
+![Resultats Tests](Mandelbulb.jpg) ![Resultats Tests](Mandelbulb1.jpg) 
+
+Test **MonteCarloHeatEquation** : Cette fois-ci, le code semble beaucoup plus compliqué, 
+car le dossier comprends plusieurs dossiers différents, avec beaucoup de classes en tout.
+
+J'essaye donc de mettre tous les fichier .cs dans une conversation avec un agent IA, pour essayer de comprendre ce que font 
+toutes ces classes.
+
+L'IA me confirme qu'il s'agit d'un solveur de l'équation de la chaleur en 2D.
+
+Dans le dossier de MonteCarloHeatEquation, on nous donne aussi une image d'exemple de résultat, 
+qui est cette photo : 
+
+![Exemple Tests](result.png) 
+
+Test **NBody** : Ce code est censé calculer les interactions gravitationnelles
+entre des milliers de particules dans l'espace. Il utilise notamment OpenGL, 
+ce qui lui premet d'enregristrer ces tampons dans CUDA.
+
+Résultat perçu : la commande powershell compile à l'infini, et la fenêtre qui s'ouvre n'affiche rien.
+
+Je referme l'onglet powershell, et je réessaye de faire run le code.
+
+On retombe sur le même probleme, il faudra donc essayer de résoudre ces problèmes.
+
+/!\ À réparer dans la documentation /!\ 
+
+Définition OPENGL : Il s'agit d'une "boîte à outils hitorique et universelle qui permet aux dévelloppeurs 
+de donner des ordres à la carte graphique pour dessiner des images en 2D ou en 3D sur l'écran.
+
+Mon PC commence à beaucoup chauffer, donc je vais passer à la modification de site depuis NODE.
+
