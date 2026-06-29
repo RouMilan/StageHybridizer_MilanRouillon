@@ -220,4 +220,3 @@ Test **Malloc** : De la même manière que le précédent, on a pas de sortie, c
 
 Test **Mandelbrot** : Cette fois ci on a bien une sortie, et on nous compare deux temps différents pour l'execution de la tâche.
 
-Test **¨Printf** : 
