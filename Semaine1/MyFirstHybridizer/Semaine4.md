@@ -29,9 +29,48 @@ Puis
 
 npm run start
 
+## Suite de tests d'exemples : 
+
 On va aujourd'hui continuer les tests des exemples hybridizer :
 
 Test **Printf** : La sortie nous donne une série de "hello", avec chacun d'entre eux venant d'un thread et d'un bloc différent.
 
 On a donc une sortie comme ça : 
 
+![Resultats Tests](Printf.jpg) 
+
+Test **Recursion** : Ce code est censé calculer 33 millions de factorielles sur le GPU
+et retourner "OK" si les calculsse sont bien faits. La vérfication est faite par le CPU, une fois
+que le GPU a tout calculé.
+
+On lit bien "OK" dans notre terminal.
+
+Test **Reduction** : Ce code est censé calculer la somme d'un très grand tableau (33 millions de cases)
+en utilisant une approchge Grid-Stripe loop. 
+
+Le résultat est donc : ![Resultats Tests](Reduction.jpg) 
+
+Définition Grid-Stride loop : Il s'agit d'une boucle où chaque thread GPU traite 
+plusieurs éléments du tableau en faisant des bonds en avant. En effet, quand il n'y a pas assez de threads pour faire 
+tous les calculs, le code attribue le calcul nunméro X+1 au premier thread. X corresponds au nombres de threads solicités.
+
+
+### Passage au tests Imaging :
+
+Test **Sobel** : Ce code est censé détecter les contours d'une image, en la mettant en noir et blanc, 
+ en observant les variations de couleurs. Il enregistre ensuite l'image suivante :
+
+Résultat : On ne peut savoir, car on a pas de résultats dans le powershell.
+
+Une IA nous dit qu'il faut avoir une image de base, ce qui paraît cohérent.
+On essaye en enregistrant une image au bon endroit. 
+
+Malgré le fait que j'enregistre une image PNG au bon endroit, je ne trouve pas une image générée dans le net8.0.
+
+Il faut donc réparer ce code, ou expliciter comment mieux l'utiliser.
+
+/!\ À réparer dans la documentation /!\
+
+
+
+ 
