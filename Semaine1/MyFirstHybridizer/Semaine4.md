@@ -1,4 +1,4 @@
-﻿Prise en main de Node :
+﻿### Prise en main de Node :
 il faut maintenant que j'installe Node. On m'a expliqué que c'etait un un outil très utilisé par les développeurs pour pouvoir mieux coder l'interface des sites.
 
 Malheureusement, l'installation ne s'est pas fait de manière parfaite.
@@ -23,29 +23,32 @@ Je n'ai finalement pas fait les installations sur mon PC fixe, car je ne vois pa
 
 Pour rappel, voici le chemin exact pour ouvrir node, dans le command prompt : 
 
-cd C:\Users\milan\OneDrive\Documents\A2.2\hybridizer-io.github.io
+```cd C:\Users\milan\OneDrive\Documents\A2.2\hybridizer-io.github.io```
 
 Puis 
 
-npm run start
+```npm run start```
 
 ## Suite de tests d'exemples : 
 
 On va aujourd'hui continuer les tests des exemples hybridizer :
 
-Test **Printf** : La sortie nous donne une série de "hello", avec chacun d'entre eux venant d'un thread et d'un bloc différent.
+#### Test **Printf** : 
+La sortie nous donne une série de "hello", avec chacun d'entre eux venant d'un thread et d'un bloc différent.
 
 On a donc une sortie comme ça : 
 
 ![Resultats Tests](Printf.jpg) 
 
-Test **Recursion** : Ce code est censé calculer 33 millions de factorielles sur le GPU
+#### Test **Recursion** : 
+Ce code est censé calculer 33 millions de factorielles sur le GPU
 et retourner "OK" si les calculsse sont bien faits. La vérfication est faite par le CPU, une fois
 que le GPU a tout calculé.
 
 On lit bien "OK" dans notre terminal.
 
-Test **Reduction** : Ce code est censé calculer la somme d'un très grand tableau (33 millions de cases)
+#### Test **Reduction** : 
+Ce code est censé calculer la somme d'un très grand tableau (33 millions de cases)
 en utilisant une approchge Grid-Stripe loop. 
 
 Le résultat est donc : 
@@ -57,9 +60,10 @@ plusieurs éléments du tableau en faisant des bonds en avant. En effet, quand i
 tous les calculs, le code attribue le calcul nunméro X+1 au premier thread. X corresponds au nombres de threads solicités.
 
 
-### Passage au tests Imaging :
+### Passage au exemples Imaging :
 
-Test **Sobel** : Ce code est censé détecter les contours d'une image, en la mettant en noir et blanc, 
+#### Test **Sobel** : 
+Ce code est censé détecter les contours d'une image, en la mettant en noir et blanc, 
  en observant les variations de couleurs. Il enregistre ensuite l'image suivante :
 
 Résultat : On ne peut savoir, car on a pas de résultats dans le powershell.
@@ -73,7 +77,8 @@ Il faut donc réparer ce code, ou expliciter comment mieux l'utiliser.
 
 /!\ À réparer dans la documentation /!\
 
-Test **Sobel_2D** : Ce code est différent du premier, car il utilise une structure rigide, 
+#### Test **Sobel_2D** : 
+Ce code est différent du premier, car il utilise une structure rigide, 
 où l'image doit obligatoirement être en 512x512. Le code est donc plus simple, car il n'a pas besoin 
 de calculer/utiliser la largeur et la longueur de l'image.
 
@@ -84,9 +89,10 @@ Je dois donc demander à mon tuteur comment faire marcher ces codes.
 
 /!\ À réparer dans la documentation /!\
 
-### Passage au tests Maths :
+### Passage au exemples Maths :
 
-Test **ConjugateGradient** : Ce code utilise l'algorithme du Gradient Conjugué, 
+#### Test **ConjugateGradient** : 
+Ce code utilise l'algorithme du Gradient Conjugué, 
 Il résout le système linéaire Ax = B, où A est une matrice creuse.
 
 En terme de sortie, nous avons une suite de chiffres décroissantes qui s'écrivent à la suite. J'en conclut donc qu'il y a un problème, car ce décompte ne s'arrête jamais.
@@ -95,7 +101,8 @@ Dans le code, il est précisé que la convergence est très lente, donc c'est pe
 
 Je dois donc demander à mon tuteur si c'est quelque chose de normal.
 
-Test **Mandelbulb** : Ce code est censé calculer la puissance de la carte graphique.
+#### Test **Mandelbulb** : 
+Ce code est censé calculer la puissance de la carte graphique.
 
 Lors du calcul, la compilation nous précise qu'il faut que le GPU soit CUDA-Compatible, et donne des informations 
 sur comment y accéder. Comme c'est la première fois que je compile, 
@@ -113,7 +120,8 @@ De plus, une autre fenêtre s'ouvre et montre une sorte de graine qui est diffic
 
 ![Resultats Tests](Mandelbulb.jpg) ![Resultats Tests](Mandelbulb1.jpg) 
 
-Test **MonteCarloHeatEquation** : Cette fois-ci, le code semble beaucoup plus compliqué, 
+#### Test **MonteCarloHeatEquation** : 
+Cette fois-ci, le code semble beaucoup plus compliqué, 
 car le dossier comprends plusieurs dossiers différents, avec beaucoup de classes en tout.
 
 J'essaye donc de mettre tous les fichier .cs dans une conversation avec un agent IA, pour essayer de comprendre ce que font 
@@ -126,7 +134,8 @@ qui est cette photo :
 
 ![Exemple Tests](result.png) 
 
-Test **NBody** : Ce code est censé calculer les interactions gravitationnelles
+#### Test **NBody** : 
+Ce code est censé calculer les interactions gravitationnelles
 entre des milliers de particules dans l'espace. Il utilise notamment OpenGL, 
 ce qui lui premet d'enregristrer ces tampons dans CUDA.
 
@@ -141,5 +150,145 @@ On retombe sur le même probleme, il faudra donc essayer de résoudre ces probl�
 Définition OPENGL : Il s'agit d'une "boîte à outils hitorique et universelle qui permet aux dévelloppeurs 
 de donner des ordres à la carte graphique pour dessiner des images en 2D ou en 3D sur l'écran.
 
-Mon PC commence à beaucoup chauffer, donc je vais passer à la modification de site depuis NODE.
+Mon PC commence à beaucoup chauffer, donc je vais passer à la modification du site depuis NODE.
+
+J'ai continué à faire quelques petits changements, notamment des petites corrections, et j'ai ajouté des problèmes de troubleshooting dans le tableau. 
+
+Ces problèmes viennent de mes propres expériences avec l'installation de Hybridizer.
+
+J'essaye d'abord de connecter visual studio code. 
+
+Je continuerais Mardi d'apprendre de nouvelles techniques et raccourcis Markdown pour améliorer la présentation du site.
+
+J'ai réussi à intégrer des images dans le code du site, mais il faut que je demande à mon tuteur de stage s'il me permet de les raouter 
+dans le dossier de la doc.
+
+On va continuer les exemples des tests : 
+
+Rappel pour accéder au tests depuis le terminal. Par exemple, pour le test nbody : 
+
+
+```cd C:\Users\milan\OneDrive\Documents\A2.2\hybridizer-basic-samples\src\3.Maths\NBody```
+
+Puis 
+
+```dotnet build```
+
+Puis 
+
+```dotnet run```
+
+#### Test **Newton** : 
+Ce code est censé générer une fractale de Newton, en résolvant 
+l'équation x^3 = 1. Il doit ensuite comparer le temps moyen pour la génération de chaque image 
+entre le CPU et le GPU. 
+
+La sortie que l'on a est 
+
+``` C# time per image : 5263 ms```
+
+```CUDA time per image : 63 ms```
+
+On en déduit donc que la compilation s'est bien faite, et donc que le code fonctionne !
+
+#### Test **SharedMatrix** : 
+Ce code est censé prendre 4 dimensions en argument, (ici on a 512x512x512x512)
+ et ensuite créer 2 matrices des ces dimensions en les remplissant de variables aléatoires.
+
+Le code, contrairement au précédent, n'utilise pas de stopwtach pour calculer la différence de temps 
+prise par le CPU et le calcul par GPU, qui est fait 10 fois. 
+
+On a donc pas de sortie avec une comparaison, seulement un message "Done" à la fin. 
+
+/!\ rajouter un stopwatch dans le code pour pouvoir observer la différence /!\
+
+#### Test **SparseMatrixReader** : 
+Ce dode est censé calculer A x X, où A est une matrice creuse, et X un vecteur, en utilisant 
+le GPU. Il crée une matrice Laplacienne 1D, qui est une matrice avec 10 millions de lignes, présentant
+surtout des 0, sauf à peu près 3 valeurs par ligne.
+
+On reçoit en sortie : 
+
+```matrix read -- starting computations```
+
+Ceci est dû au fait que l'on a pas d'autres sortie de prévue après les calculs.
+
+/!\ rajouter une sortie après la sortie actuelle /!\
+
+### Passage au exemples Finance :
+
+Comme précisé pendant une discussion avec mon tuteur de stage, un des buts 
+de Hybridizer est de servir à, par exemple, des traders. Avec la version payante, on a accès 
+au calculs précis, faits en interne par Hybridizer, qui permettent d'expliquer les choix du trader 
+à la personne au dessus de lui dans l'entreprise.
+
+Cela a donc du sens de faire quelques exemples en lien avec la finance.
+
+#### Test **BlackScholes** :
+Il s'agit d'un test de validation numérique entre le CPU et le GPU. C'est à dire qu'il faut vérifier si le calcul du GPU est le même que
+le calcul du CPU. 
+
+Résultat : La sortie nous indique que le code n'a pas fonctionné. On a cette sortie :
+
+![Exemple Tests](BlackScholes.jpg) 
+
+Il ne s'agit enfait pas d'une erreur, c'est bel et bien la sortie attendue du programme.
+Il sert à montrer le très petit écart entre le calcul du CPU et du GPU
+
+Voici ce que chaque partie veut signifie :
+- Linf = erreur la plus grande
+- L1 : Moyenne Quadratique d'erreurs
+- L2 : Moyenne d'erreurs
+
+Dans le language des traders, Call (comme au poker) signifie l'option d'acheter ses actions.
+
+Quant à lui, Put correspond à l'option de vendre ses actions.
+
+#### Test **BlackScholesFloat4** :
+
+Ce code ressemble beaucoup au précédent, mais vectorise les données par pacquet de 4 floats au lieu d'un.
+
+Cela veut dire que le code est plus rapide, car la calcul est moins lourd, mais qu'il y'a moins de précision.
+
+On vérifie cela dans le powershell :
+
+![Exemple Tests](BlackScholes2.jpg) 
+
+On remarque en effet, que oui, les erreurs sont plus grandes.
+
+/!\ rajouter un stopwatch dans ce code, et le précédent, pour pouvoir observer la différence /!\
+
+#### Test **StrategyBackTest** :
+
+Ce code est le plus avancé des codes dans la partie Finance, car il prend en compte beaucoup plus de 
+paramètres. Il s'agit d'un exemple très concret du GPU computing en finance.
+
+D'ailleurs, il propose une sortie beaucoup plus engagente que les autres programmes.
+
+![Exemple Tests](StrategyBacktest.jpg) 
+
+Vu que mon PC est plutôt lent, j'ai du attendre assez longtemps avant d'avoir le reste de la sortie, mais c'était une bonne nouvelle.
+
+![Exemple Tests](StrategyBacktest2.jpg) 
+![Exemple Tests](StrategyBacktest3.jpg) 
+![Exemple Tests](StrategyBacktest4.jpg) 
+
+Ce résultat à l'air très intéressant, mais trop compliqué à comprendre à l'instant.
+
+On remarque néanmoins une irrégularité dans le premier tableau proposé, il faudra donc réparer ceci 
+à un autre moment du stage
+
+/!\ Code le plus complet, potentiellement intéressant de le présenter dans l'exemple du site à la place du programme qui ne fonctionne pas /!\ 
+/!\ réparer l'interface de la sortie de ce code /!\ 
+
+### Passage aux exemples CUDA Runtime :
+
+#### Test **ConstantMemory** :
+
+Ce code a comme but de montrer la capacité de mémoire constante de la carte graphique. Je n'ai pas compris 
+ce que ce code fait précisément, mais il s'agit d'un Stencil. J'ai compris qu'il prends un nombre et le mélange à ses deux voisins de gauche et à ses deux voisins de droite.
+
+Le résultat dit juste ODNE, sans autres explications.
+/!\ ajouter des informations à la sortie de ce code /!\ 
+
 
