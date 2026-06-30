@@ -115,7 +115,7 @@ Onglet "What is Hybridizer ?" :
 De la même façon que sur le premier onglet, on a une définition donnée sous le titre; Si on la simplifie, 
 on apprend que le but d'Hybridizer est de faciliter le travail des développeurs. Une fois installé, tu ne te rends même pas compte
 que la traduction C#->langage(CPU/GPU) se fait automatiquement. Grâce à cet outil, il est beaucoup plus facile 
-d'apprendre à travailler directement sur le CPU/GPU, car il suffit de n'utiliser qu'un langage au lieu d'en apprendre 2
+d'apprendre à travailler directement avec le CPU/GPU, car il suffit de n'utiliser qu'un langage au lieu d'en apprendre 2
 qui ne sont pas très communs (CUDA/AVX par exemple).
 
 Titre Hybridizer en opération : Ici, on nous rappelle que Hybridizer fonctionne sur un langage intermédiaire, 
