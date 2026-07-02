@@ -324,7 +324,6 @@ On remarque néanmoins que dans la sortie, on reçoit un tableau de 4x8, avec qu
 Je ne comprends pas trop à quoi sert ce tableau, je regarde la docs, mais ce programme ne fait pas partie 
 des exemples donnés.
 
-/!\ rajouter ce code aux exemples dans la docs /!\ 
 
 #### Test **Generic Reduction** :
 
@@ -389,7 +388,40 @@ pour voir ce qu'il en suit.
 
 Il faut d'ailleurs, dans ce cas, préciser quel csproj on veut build, car le dossier est très lourd.
 
+On reçoit une partie de la sortie, mais on bloque au moment de trouver le modèle.
 
+/!\ réparer ce code/les paramètres de mon pc /!\
+
+Voici la sortie :
+
+![Exemple Tests](TinyLlama.jpg) 
 
 On fait maintenant le bilan de ce qu'il y a à modifier dans tous ces exemples :
+
+### Modifications à faire la semaine prochaine :
+
+Rajouter un stopwatch pour observer la différence de temps :
+- Pour SharedMatrix
+- Pour BlackScholesFloat4
+
+Rajouter plus de contenu dans la sortie :
+- Pour SparseMatrixReader 
+- Constant Memory
+- Generic Functions
+- Generic Reduction
+- Interfaces Reduction
+- Lambda Reduction
+
+Réparer le code, ou revoir les paramètres de mon PC :
+- Sobel ( trouver l'image, disponible dans SharedResources)
+- Sobel2D
+- NBody (compilateur infini)
+- Simple Meta Data Decorator
+- WmmaGemm
+- Tiny Llama
+
+Pour StrategyBacktest : Songer à remplacer le code donné dans la doc par celui-ci.
+On peut également améliorer un peu l'interface de la sortie, car il y a avait une irrégularité dans le tableau affiché.
+
+Je vais maintenant continuer avec l'édition des fichiers de la Doc.
 
