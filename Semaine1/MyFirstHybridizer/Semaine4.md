@@ -288,7 +288,108 @@ On remarque néanmoins une irrégularité dans le premier tableau proposé, il f
 Ce code a comme but de montrer la capacité de mémoire constante de la carte graphique. Je n'ai pas compris 
 ce que ce code fait précisément, mais il s'agit d'un Stencil. J'ai compris qu'il prends un nombre et le mélange à ses deux voisins de gauche et à ses deux voisins de droite.
 
-Le résultat dit juste ODNE, sans autres explications.
+Le résultat dit juste DONE, sans autres explications.
 /!\ ajouter des informations à la sortie de ce code /!\ 
 
+#### Test **Streams** :
+
+Ce code est censé montrer comment il est possible de faire plusieurs choses en même temps
+en parallèle sur le GPU.
+
+Il possède deux tableau de 33 millions de floats, avec le premier rempli de {0,1,2..}
+et le deuxième rempli uniquement de 1. Le but est d'ensuite faire 100 fois a[i] += b[i].
+
+On devrait donc avoir un tableau a rempli de nombres croissants à partir de 100.
+
+On retrouve bien cette première ligne en sortie dans le terminal, qui affiche 100, 101, 102, 103 etc...
+
+### Passage aux exemples Advanced :
+
+#### Test **Generic Functions** :
+
+Le but de cet algorithme est d'additionner 1.0f à chaque élément d'un tableau de 32 millions
+de floats en passant par le GPU. Il vérifie ensuite que tous les éléments du tableau
+valent bien 1.0f. 
+
+Une fois véifié, il écrit OK dans la console, et c'est bien ce que l'on peut observer.
+
+/!\ ajouter des informations à la sortie de ce code /!\ 
+
+#### Test **Generic Memory Access** :
+
+Ce programme montre comment il est possnible d'accéder à la mémoire de façon générique
+
+On remarque néanmoins que dans la sortie, on reçoit un tableau de 4x8, avec quelques 1 éparpillés.
+
+Je ne comprends pas trop à quoi sert ce tableau, je regarde la docs, mais ce programme ne fait pas partie 
+des exemples donnés.
+
+/!\ rajouter ce code aux exemples dans la docs /!\ 
+
+#### Test **Generic Reduction** :
+
+Ce code implémente une réduction générique sur GPU.
+
+Définition Réduction Générique : il s'agit du fait de combiner tous les éléments d'un tableau
+en une valeur, de façon à ce que le code marche pour tout type d'opération.
+
+En sortie, nous avons que droit à un "OK", donc on se retrouve avec à peu près le même problème que d'habitude.
+
+/!\ ajouter des informations à la sortie de ce code /!\ 
+
+#### Test **Interfaces Reduction** :
+
+Ce code ressemble beaucoup au précédent, mais on utilise à la place une interface polymorphe
+classique. 
+
+Définition Interface Polymorphe : Il s'agit d'une interface qui permet de pouvoir appeler
+la même méthodes sur des objets différents, et d'avoir des comportements différents selon l'objet.
+
+En sortie, nous avons que droit à un "OK", donc on se retrouve avec à peu près le même problème que d'habitude.
+
+/!\ ajouter des informations à la sortie de ce code /!\ 
+
+#### Test **Lambda Reduction** :
+
+Il s'agit de la troisième variante de réduction, cette fois ci faite avec des lambdas passés 
+directement en paramètre. 
+
+Encore une fois, nous avons que "OK" en sortie sur ce programme.
+
+/!\ ajouter des informations à la sortie de ce code /!\ 
+
+#### Test **Simple Meta Data Decorator** :
+
+Ce code est censé tester le fait que Hybridizer est capable de supporter une structure de données
+personalisées, combinée à une interface polymorphe.
+
+Ce cas est plus centré objectif, plutôt qu'être un exemple mathématique.
+
+En revanche, la sortie nous fait comprendre qu'il y'a eu un problème dans la compilation du code.
+
+En voici le résultat : 
+
+![Exemple Tests](Decorator.jpg) 
+
+/!\ réparer ce code/les paramètres de mon pc /!\ 
+
+#### Test **WmmaGemm** :
+
+Ce code est beaucoup plus complexe que les précédents, mais 
+grâce à une IA, je comprends qu'il s'agit d'une méthode de multiplication de matrice.
+
+Cependant, le build n'a pas réussi à se faire et tournait en boucle.
+
+/!\ réparer ce code/les paramètres de mon pc /!\
+
+### Passage à l'exemple AI/Tiny Llama  :
+
+Ce code est bien trop long pour que je le comprenne, donc je vais juste lancer le build, puis le run 
+pour voir ce qu'il en suit. 
+
+Il faut d'ailleurs, dans ce cas, préciser quel csproj on veut build, car le dossier est très lourd.
+
+
+
+On fait maintenant le bilan de ce qu'il y a à modifier dans tous ces exemples :
 
