@@ -425,3 +425,35 @@ On peut également améliorer un peu l'interface de la sortie, car il y a avait 
 
 Je vais maintenant continuer avec l'édition des fichiers de la Doc.
 
+J'ai donc apporté deux nouveaux pull requests, surtout pour simplifier un peu le texte dans la docs.
+Je m'intéresse maintenant à la partie "Your first Kernell" présente dans la doc, en essayant de la faire 
+tourner sur mon PC portable.
+
+Il y a un problème sur tous les programmes que j'essaye d'executer, il ne reconnaît pas Hybridizer.Basic.Utilities.
+
+Je demande donc à mon tuteur de stage de l'aide, car je ne vois pas comment solutionner ce problème.
+
+Il faut apparement que je compile Hybridizer.Basic.Utilities, donc je lance le Utilities.sln.
+
+Ce n'était pas ce qu'il fallait faire, il faut enfait aller dans l'explorateur de solution de mon projet, et suivre ces instructions :
+- Clic droit sur le projet, puis "Add Reference"
+- Naviguer jusqu'au Utilities.dll, qui se trouve dans le dossier C:\Users\milan\OneDrive\Documents\A2.2\hybridizer-basic-samples\src\0.Utils\Utilities\bin\Debug\netstandard2.0.
+
+On remarque maintenant que qu'il n'y aplus d'erreurs apparentes, je vais quand même essayer de lancer le code.
+
+Je me retrouve avec ce problème : 
+
+![Exemple Tests](ProblèmeUtilities.jpg)
+
+J'essaye de voir ce que je peux faire pour résoudre ce problème.
+
+Je n'ai pas réussi, j'attends donc d'avoir un moment avec mon tuteur de stage pour qu'il m'aide.
+
+À faire la semaine prochaine : 
+
+- Faire marcher le code hybridizer depuis mon PC.
+- Continuer de faire des petites modifications sur la docs
+- Commencer à réparer les codes qui ne fonctionnent pas
+- Rajouter les sorties pour les codes qui n'en ont pas. 
+
+
