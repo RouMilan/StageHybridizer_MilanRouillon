@@ -193,7 +193,7 @@ On en déduit donc que la compilation s'est bien faite, et donc que le code fonc
 
 #### Test **SharedMatrix** : 
 Ce code est censé prendre 4 dimensions en argument, (ici on a 512x512x512x512)
- et ensuite créer 2 matrices des ces dimensions en les remplissant de variables aléatoires.
+ et ensuite créer 2 matrices de ces dimensions en les remplissant de variables aléatoires.
 
 Le code, contrairement au précédent, n'utilise pas de stopwtach pour calculer la différence de temps 
 prise par le CPU et le calcul par GPU, qui est fait 10 fois. 
@@ -202,8 +202,8 @@ On a donc pas de sortie avec une comparaison, seulement un message "Done" à la 
 
 /!\ rajouter un stopwatch dans le code pour pouvoir observer la différence /!\
 
-#### Test **SparseMatrixReader** : 
-Ce dode est censé calculer A x X, où A est une matrice creuse, et X un vecteur, en utilisant 
+#### Test **SparseMatrix** : 
+Ce code est censé calculer A x X, où A est une matrice creuse, et X un vecteur, en utilisant 
 le GPU. Il crée une matrice Laplacienne 1D, qui est une matrice avec 10 millions de lignes, présentant
 surtout des 0, sauf à peu près 3 valeurs par ligne.
 
@@ -402,10 +402,10 @@ On fait maintenant le bilan de ce qu'il y a à modifier dans tous ces exemples :
 
 Rajouter un stopwatch pour observer la différence de temps :
 - Pour SharedMatrix
-- Pour BlackScholesFloat4
+- Pour BlackScholes
 
 Rajouter plus de contenu dans la sortie :
-- Pour SparseMatrixReader 
+- Pour SparseMatrix 
 - Constant Memory
 - Generic Functions
 - Generic Reduction
