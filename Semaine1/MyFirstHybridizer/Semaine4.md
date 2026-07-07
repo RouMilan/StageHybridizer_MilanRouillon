@@ -279,7 +279,7 @@ On remarque néanmoins une irrégularité dans le premier tableau proposé, il f
 à un autre moment du stage
 
 /!\ Code le plus complet, potentiellement intéressant de le présenter dans l'exemple du site à la place du programme qui ne fonctionne pas /!\ 
-/!\ réparer l'interface de la sortie de ce code /!\ 
+
 
 ### Passage aux exemples CUDA Runtime :
 
@@ -289,6 +289,7 @@ Ce code a comme but de montrer la capacité de mémoire constante de la carte gr
 ce que ce code fait précisément, mais il s'agit d'un Stencil. J'ai compris qu'il prends un nombre et le mélange à ses deux voisins de gauche et à ses deux voisins de droite.
 
 Le résultat dit juste DONE, sans autres explications.
+
 /!\ ajouter des informations à la sortie de ce code /!\ 
 
 #### Test **Streams** :
