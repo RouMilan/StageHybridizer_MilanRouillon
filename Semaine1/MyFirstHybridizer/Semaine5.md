@@ -96,6 +96,47 @@ Atomics.Max a un bug — il fait currentValue + val au lieu de Math.Max(currentVal
 l'erreur ne se voit que sur la toute dernière étape (l'agrégation atomique entre blocs), donc ça peut fausser légèrement buffMax[0] selon 
 le nombre de blocs qui écrivent en même temps.
 
+##### Amelioration Generic Function :
+
+Pour rappel, ce code teste que `Add` fonctionne bien avec une lambda passé en paramètre.
+
+Cependant, nous avons pas de sortie concrète pour montrer ce que fait le code, on va donc y remédier.
+
+J'ai donc opéré rajouté deux nouvelles additions au code. J'ai d'abord rajouté un exemple de différence de temps de calcul entre le CPU 
+et le GPU. Ensuite, j'ai décidé de rajouter une boucle qui calcule le nombre d'erreurs reconnues par le code.
+
+Je ne peux pas tester si la boucle du nombre d'erreurs fonctionne, car j'ai l'impression que le code
+ne fait aucune erreur. 
+
+Il y a quelque chose d'autre qui est intéressant, le temps pris par le CPU est plus petit que celui
+pris par le GPU, ce qui est assez surprenant. J'hésite donc beaucoup à garder cette fonctionnalité.
+
+Selon Claude, c'est attendu car le calcul qu'il faut faire est assez facile, donc le CPU se prête 
+plus à ce type de calcul. 
+
+Néanmoins, voici la sortie : 
+
+![Modifications Code](AmeliorationGenericFunction.jpg)
+
+##### Amelioration Lambda Reduction
+
+Pour rappel, ce code fait la même chose que GenericReduction, mais en utilisant un lambda passé directement en paramètre.
+
+On va donc faire en sorte que la sorte soit pareille que le calcul de GenericReduction.
+
+On a donc cette sortie :
+
+![Modifications Code](AmeliorationLambdaReduction.jpg)
+
+##### Amelioration Interfaces Reduction
+
+Pour rappel, ce code fait la même chose que GenericReduction, mais en utilisant un polymorphe.
+
+On va donc faire en sorte que la sorte soit pareille que le calcul de GenericReduction.
+
+On a donc cette sortie :
+
+![Modifications Code](AmeliorationInterfaceReduction.jpg)
 
 #### Résumé de la suite :
 
@@ -106,7 +147,10 @@ le nombre de blocs qui écrivent en même temps.
     - SparseMatrix
     - ConstantMemory
     - GenericReduction
-
+    - GenericFunction
+    - InterfacesReduction
+    - LambdaReduction
+    
 
 
 

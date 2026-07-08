@@ -414,7 +414,7 @@ Rajouter plus de contenu dans la sortie :
 - Lambda Reduction
 
 Réparer le code, ou revoir les paramètres de mon PC :
-- Sobel ( trouver l'image, disponible dans SharedResources)
+- Sobel (trouver l'image, disponible dans SharedResources)
 - Sobel2D
 - NBody (compilateur infini)
 - Simple Meta Data Decorator
