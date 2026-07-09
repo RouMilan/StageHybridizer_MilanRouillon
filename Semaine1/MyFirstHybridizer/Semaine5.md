@@ -150,7 +150,43 @@ On a donc cette sortie :
     - GenericFunction
     - InterfacesReduction
     - LambdaReduction
-    
+
+Pour cela demander à Aymen.
+ 
+Tiny-Llama : chercher l'inférence. 26 couches de réseaux de neurones. Envoyez un texte et il le complète.
+Regarder le readme, télécharger le wget ou curl.
+
+##### Reessayer le test WmmaGemm
+
+Suite à un appel avec mon tuteur de stage, j'ai posé des questions sur le code de WmmaGemm. J'avais auparavant fait tourner 
+le code, mais il n'avait pas compilé. Il ma dit de réessayer en regardant la part de GPU et de CPU pris dans le task manager.
+
+Comme la dernière fois, le code compile à l'infini. J'ouvre donc le task manager et je vois que le CPU ne semble pas être affecté.
+
+Le GPU ne semble pas non plus être affecté, j'en déduis donc qu'il y a un problème dans le code.
+
+##### Reessayer le test NBody
+
+Je fais le même test avec le code de NBody; qui avait des problèmes dans l'affichage de la fenêtre qu'il génère.
+
+La fenêtre générée semble utiliser 7% du CPU, donc j'en déduit qu'il y a quand même des calculs qui sont effectués.
+
+De plus, j'entends les ventilateurs tourner très vite, et mon PC chauffe à un endroit précis.
+
+J'attends donc d'avoir un changement dans le contenu de la fenêtre. 
+
+Je vois qu'au bout d'un moment, il n'y a toujours rien qui change, donc je ferme la fenêtre afin de laisser respirer mon PC.
+
+Il faudra encore regarder ça de plus près.
+
+Explications StrategyBacktest : 
+
+#### Installer Obsidian :
+
+Mon tuteur m'a aussi conseillé d'installer Obsidian, une Open Source pour Markdown.
+
+L'installation s'est faite sans problème, mais je ne sais pas l'utiliser? Je demande à un autre stagiaire de venir m'aider.
+
 
 
 
