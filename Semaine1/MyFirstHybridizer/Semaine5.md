@@ -151,7 +151,9 @@ On a donc cette sortie :
     - InterfacesReduction
     - LambdaReduction
 
-Pour cela demander à Aymen.
+Pour cela j'ai demandé à Aymen.
+
+Au final, nous avons réussi à faire un push request pour tout les changements, et j'utiliserais sa méthode pour les prochaines.
  
 Tiny-Llama : chercher l'inférence. 26 couches de réseaux de neurones. Envoyez un texte et il le complète.
 Regarder le readme, télécharger le wget ou curl.
@@ -187,6 +189,52 @@ Mon tuteur m'a aussi conseillé d'installer Obsidian, une Open Source pour Markdo
 
 L'installation s'est faite sans problème, mais je ne sais pas l'utiliser? Je demande à un autre stagiaire de venir m'aider.
 
+à faire : remettre le tab linux dans l'étape 1 et 2, 
 
+Installer WSL : https://learn.microsoft.com/fr-fr/windows/wsl/install
+
+Vaut mieux copier-coller les sorties plutôt que de faire des captures d'écran.
+
+Rajouter l'installation Git pour Linux.
+
+Nuancer le fait que l'on peut que utiliser CUDA 13.0, d'autres sont possibles aussi.
+
+Installation WSL : Très facile à installer, il suffit d'écrire cette commande dans l'invite de commande : 
+
+```wsl --install```
+
+Il faut ensuite ouvrir l'application Ubuntu depuis le menu démarrer, et écrire :
+```
+Create a default Unix user account: Milan
+Invalid username. A valid username must start with a lowercase letter or underscore, and can contain lowercase letters, digits, underscores, and dashes.
+Create a default Unix user account: milan
+New password:
+Retype new password:
+passwd: password updated successfully
+usermod: no changes
+Help improve Ubuntu!
+
+Help us improve Ubuntu features and compatibility by sharing system reports with Canonical.
+Reports are sent anonymously and do not contain any personal data.
+For legal details, please visit: https://ubuntu.com/legal/systems-information-notice
+
+We will save your answer to Windows and will only ask you once.
+
+Would you like to opt-in to platform metrics collection (Y/n)? To see an example of the data collected, enter 'e'.
+[Y/n/e]: y
+```
+
+A faire : WSL2
+
+- Indiquer les passages de la documentation 
+- Savoir comment fabriquer un rapport Context7 : Repository de docs pour le LLM, pour qu'il puisse y accéder en MCP. Il faut que je fasse apprendre à Antione.
+- Ameliorer les README
+- Faire tester Hybridizer par Aymen.
+- Ameliorer le quickstart -> rejouter depuis le powershell.
+
+
+
+
+ 
 
 
