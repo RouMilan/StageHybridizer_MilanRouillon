@@ -1,25 +1,25 @@
-
+Ôªø
 #### Installer Obsidian :
 
-Mon tuteur m'a aussi conseillÈ d'installer Obsidian, une Open Source pour Markdown.
+Mon tuteur m'a aussi conseill√© d'installer Obsidian, une Open Source pour Markdown.
 
-L'installation s'est faite sans problËme, mais je ne sais pas l'utiliser? Je demande ‡ un autre stagiaire de venir m'aider.
+L'installation s'est faite sans probl√®me, mais je ne sais pas l'utiliser? Je demande √† un autre stagiaire de venir m'aider.
 
-‡ faire : remettre le tab linux dans l'Ètape 1 et 2, 
+√† faire : remettre le tab linux dans l'√©tape 1 et 2, 
 
 Installer WSL : https://learn.microsoft.com/fr-fr/windows/wsl/install
 
-Vaut mieux copier-coller les sorties plutÙt que de faire des captures d'Ècran.
+Vaut mieux copier-coller les sorties plut√¥t que de faire des captures d'√©cran.
 
 Rajouter l'installation Git pour Linux.
 
 Nuancer le fait que l'on peut que utiliser CUDA 13.0, d'autres sont possibles aussi.
 
-Installation WSL : TrËs facile ‡ installer, il suffit d'Ècrire cette commande dans l'invite de commande : 
+Installation WSL : Tr√®s facile √† installer, il suffit d'√©crire cette commande dans l'invite de commande : 
 
 ```wsl --install```
 
-Il faut ensuite ouvrir l'application Ubuntu depuis le menu dÈmarrer, et Ècrire :
+Il faut ensuite ouvrir l'application Ubuntu depuis le menu d√©marrer, et √©crire :
 ```
 Create a default Unix user account: Milan
 Invalid username. A valid username must start with a lowercase letter or underscore, and can contain lowercase letters, digits, underscores, and dashes.
@@ -42,33 +42,81 @@ Would you like to opt-in to platform metrics collection (Y/n)? To see an example
 
 #### A faire : 
 
-- WSL2
-- Indiquer les passages de la documentation 
-- Savoir comment fabriquer un rapport Context7 : Repository de docs pour le LLM, pour qu'il puisse y accÈder en MCP. Il faut que je fasse apprendre ‡ Antoine.
-- Ameliorer les README
+- WSL2‚úÖ
+- Indiquer les passages compliqu√©s de la documentation 
+- Savoir comment fabriquer un rapport Context7 : Repository de docs pour le LLM, pour qu'il puisse y acc√©der en MCP. Il faut que je fasse apprendre √† Antoine.‚úÖ
+- Ameliorer les README 
 - Faire tester Hybridizer par Aymen.
-- Ameliorer le quickstart -> rajouter depuis le powershell.
+- Ameliorer le quickstart -> rajouter depuis le powershell. ‚úÖ
 
-Je remplace donc tous les exemples des photos dans la docs par des copiÈs collÈs du terminal. En effet, c'est plus pratique ‡ modifier ‡ un autre moment que des images.
+Je remplace donc tous les exemples des photos dans la docs par des copi√©s coll√©s du terminal. En effet, c'est plus pratique √† modifier √† un autre moment que des images.
 
-J'ai donc ajoutÈ quelques lignes dans la docs, avec la deuxiËme mÈthode pour tester l'installation de Hybridizer, 
-que j'ai utilisÈe et qui a fonctionnÈe.
+J'ai donc ajout√© quelques lignes dans la docs, avec la deuxi√®me m√©thode pour tester l'installation de Hybridizer, 
+que j'ai utilis√©e et qui a fonctionn√©e.
 
-DÈfinition Context7 : Serveur MCP, qui permet ‡ un assistant IA de se fier uniquement aux infos disponible dans une libraire (repo git, docs , etc..)
-au lieu de se fier aux donnÈes d'entrainement.
+D√©finition Context7 : Serveur MCP, qui permet √† un assistant IA de se fier uniquement aux infos disponible dans une libraire (repo git, docs , etc..)
+au lieu de se fier aux donn√©es d'entrainement.
 
-DÈfinition MCP : en anglais, Model Context Protocol. C'est un outil qui permet aux assistants IA de communiquer avec des outils externes plus facilement.
+D√©finition MCP : en anglais, Model Context Protocol. C'est un outil qui permet aux assistants IA de communiquer avec des outils externes plus facilement.
 
-J'ai nÈanmoins l'impression qu'il va falloir que j'installe une LLM sur mon PC. 
+J'ai n√©anmoins l'impression qu'il va falloir que j'installe une LLM sur mon PC. 
 
 Je reconfirme avec mon agent ia, et il me fait comprendre que je peux normalement tout faire depuis mon navigateur.
 
-Ètapes ‡ suivre : 
+√©tapes √† suivre : 
 - Va dans Customize > Connectors
-- Clique sur "+" puis "Ajouter un connecteur personnalisÈ"
+- Clique sur "+" puis "Ajouter un connecteur personnalis√©"
 - Colle l'URL https://mcp.context7.com/mcp
 - Valide, puis active le connecteur dans la conversation via le bouton "+"
 
-On me fait ensuite comprendre qu'il est beaucoup plus simples de connecter les repos publiques (basic-samples, les docs) que les repos privÈs tels que celui que j'utilise pour le stage.
+On me fait ensuite comprendre qu'il est beaucoup plus simples de connecter les repos publiques (basic-samples, les docs) que les repos priv√©s tels que celui que j'utilise pour le stage.
 
-J'essaye tout de mÍme de crÈer un Context7 pour les deux repos publics.
+J'essaye tout de m√™me de cr√©er un Context7 pour les deux repos publics.
+
+Au final, mon repo est public, donc je peux le connecter √† Context7.  
+
+On va commencer par lui. 
+
+####  Mise en Context7 des repos Github :
+
+Il faut suivre les 4 √©tapes pr√©c√©dentes, c'est donc ce que je fais. 
+
+Malgr√© le fait que l'agent IA m'avait pr√©venu qu'il pouvait y avoir du d√©lai avant d'ajouter la librairie, mon repo est accept√© quasi instantan√©ment.
+
+J'obtiens un score de fiabilit√© de 3.8, ce qui me para√Æt logique car mon repo n'est pas tr√®s grand.
+
+Je dois n√©anmoins redemander en envoyant un screen si l'installation s'est bien faite, et on me confirme que c'est bon.
+
+Question : Comment est utilis√© Context7 ?
+
+R√©ponse : en rajoutant use library/your/repo, la r√©ponse au prompt va beaucoup d√©pendre de ce qui se trouve sur mon repo.
+Si il manque des infos, il compl√®tera avec ses "connaissances", qui sont enfait les donn√©es d'entrainement de l'IA.
+
+On fait donc le test, en lui demandant de r√©sumer point par point toutes les choses que j'ai apprise pour l'instant √† mon stage.
+
+Il ne faut pas oublier d'activer le connecteur context7 dans la conversation avant de demander, √©videmment.
+
+La formule magique pour utiliser Context7 est donc : ```use library/roumilan/stagehybridizer_milanrouillon```
+
+Je rajoute ensuite le repo public du site de la docs Hybridizer.
+
+Pour utiliser Context7 sur la docs de Hybridizer : ```use library/hybridizer-io/hybridizer-io.github.io```
+
+Je rajoute finalement le repo public du site des basic samples de Hybridizer.
+
+Pour utiliser Context7 sur la docs de Hybridizer : ```use library/hybridizer-io/hybridizer-basic-samples```
+
+#### Prise en Main de WSL 2
+
+Je commence donc par essayer de me renseigner sur ma version de WSL install√©e, et je me rends compte que j'ai install√© la version 2.
+On peut facilement v√©rifier sa version WSL depuis l'invite de commande avec : ```wsl -l -v```
+
+Ensuite, pour changer de version facilement depuis l'invite de commande : ```wsl --set-version Ubuntu X```, 
+avec le X √©tant la version 1 ou 2 que l'on veut modifier.
+
+Personnelement, je ne peux pas changer de version, car j'ai ce message quand j'essaye :
+
+```WSL1 is not supported with your current machine configuration. Please enable the "Windows Subsystem for Linux" optional component to use WSL1.Error code: Wsl/Service/WSL_E_WSL1_NOT_SUPPORTED```
+
+
+
