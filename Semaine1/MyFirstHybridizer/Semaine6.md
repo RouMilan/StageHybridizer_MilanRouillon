@@ -46,7 +46,7 @@ Would you like to opt-in to platform metrics collection (Y/n)? To see an example
 - Indiquer les passages compliqués de la documentation 
 - Savoir comment fabriquer un rapport Context7 : Repository de docs pour le LLM, pour qu'il puisse y accéder en MCP. Il faut que je fasse apprendre à Antoine.✅
 - Ameliorer les README 
-- Faire tester Hybridizer par Aymen.
+- Faire tester Hybridizer par Aymen. -> La semaine prochaine.
 - Ameliorer le quickstart -> rajouter depuis le powershell. ✅
 
 Je remplace donc tous les exemples des photos dans la docs par des copiés collés du terminal. En effet, c'est plus pratique à modifier à un autre moment que des images.
@@ -117,6 +117,37 @@ avec le X étant la version 1 ou 2 que l'on veut modifier.
 Personnelement, je ne peux pas changer de version, car j'ai ce message quand j'essaye :
 
 ```WSL1 is not supported with your current machine configuration. Please enable the "Windows Subsystem for Linux" optional component to use WSL1.Error code: Wsl/Service/WSL_E_WSL1_NOT_SUPPORTED```
+
+Afin de bien être à jour, je demande, en utilisant Context7, à l'IA de me faire un compte rendu des tâches à faire que je ne semble pas avooir fait.
+
+Je me rends compte que je n'ai jamais essayé d'améliorer le code de Intrinsics, et c'est donc ce que je vais faire.
+
+#### Amélioration Intrinsics :
+
+Je commence donc par ajouter un peu plus de détails dans la sortie de ce code
+qui était auparavant vide, ou sans interêt.
+
+Nouvelle sortie, plus claire : 
+
+![Modifications Code](AmeliorationIntrinsics.jpg)
+
+On ne voit pas les valeurs précises issues des half2, je n'ai pas réussi à les extraire. Néanmoins, on voit que le code fonctionne
+et le temps qu'il prends.
+
+### Amélioration des README :
+
+J'ai rajouté des README pour les codes suivants :
+- BuiltIn
+- HelloWorld
+- InOut
+- Malloc
+
+J'ai amélioré les README pour les codes suivants :
+- Intrinsics
+
+De plus, je suis desfois repassé sur certains codes pour m'assurer de leur bon fonctionnement :
+- Malloc
+- 
 
 
 
