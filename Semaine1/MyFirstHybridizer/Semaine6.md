@@ -141,13 +141,25 @@ J'ai rajouté des README pour les codes suivants :
 - HelloWorld
 - InOut
 - Malloc
+- Mandelbrot
+- Printf
 
 J'ai amélioré les README pour les codes suivants :
 - Intrinsics
 
 De plus, je suis desfois repassé sur certains codes pour m'assurer de leur bon fonctionnement :
 - Malloc
-- 
+- Mandelbrot
+
+À faire : 
+- Push force pour rajouter des commentaires sous mes commits de basic samples.
+- Pouvoir faire en sorte d'utiliser Context7 avec les versions récentes, moins récentes.
+- Par rapport aux versions moins récentes, essayer de retrouver des exemples de fonctionnement de la version.
+- Tester plusieurs library dans une même Context7.
+- Expliquer le fonctionnement Context7, faire un exemple à tester.
+
+
+
 
 
 
