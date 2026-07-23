@@ -68,17 +68,47 @@ Après le test par Aïmene, je vais devoir apporter quelques modifications au do
 J'ai pu noter plusieurs points où il y a eu des blocages dans l'installation. Je les notes donc à la suite :
 
 - Préciser que, pour utiliser Hybridizer, il faut avoir installé VS2022, sinon CUDA Toolkit ne fonctionnera pas. Au début du site.
-- Rajouter une phrase "cliquer" après le petit 2 de l'étape 1.
-- Préciser la version CUDA très tôt
-- Mettre en gras les informations importantes dans les exemples de command prompt
+- Rajouter une phrase "cliquer" après le petit 2 de l'étape 1. 
+- Répaerer le lien vers le site NVIDIA pour le toolkit 13.0.
+- Préciser la version CUDA très tôt.
+- Mettre en gras les informations importantes dans les exemples de command prompt.
 - Montrer qu'il ne faut pas installer le driver à l'étape 2, mais seulement le toolkit.
-- Reessayer l'installation par VSCode
+- Reessayer l'installation par VSCode. 
+
+#### Changements faits au setup :
+
+Sur le document setup, j'ai donc fait tous les points notés ci-dessus. 
+
+Je vais donc faire un pull request sur le repo git du site hybridizer io.
+
+J'ai réussi, je me remets donc à faire les modifications des noms de commit pour les basic samples.
+
+#### Modifications des noms des commits :
+
+Pour l'instant, j'ai réussi à modifier les noms des commits en suivant cette logique : 
+
+- Aller sur l'invite de commande 
+- Trouver le bon fichier que je veux modifier
+- écrire : ```git log --oneline```
+- écrire : ```git rebase -i Head~3```
+- Un nouvel onglet du notepad s'ouvre, et il faut que je remplace le "pick" devant le numéro et le nom du commit par "reword"
+- Il faut ensuite sauvegarder et fermer le notepad.
+- Un nouvel onglet du notepad s'ouvre, et il faut que je remplace le nom du commit par celui que je veux
+- Il faut ensuite sauvegarder et fermer le notepad.
+- écrire : ```git push --force-with-lease ```
+- Le nom du commit devrait être changé !
+
+Interessant à savoir : Le numéro après Head correspond au nombre de commits que je peux atteindre.
+
+#### Découverte des MCP avec les différentes IA : 
+
+J'en profite pour installer Claude sur mon ordinateur.
 
 à faire : 
 - Reessayer l'installation par Aimene, cette fois en utilisant Studio Code.
 - Trouver les MCP par d'autres agents IA que Claude. Surtout Gemini, CodeX et ChatGPT. Relier le MCP au Context7.
 - Continuer les README. Fait
-- Continuer de changer les noms des commits.
+- Continuer de changer les noms des commits. Fait
 
 ### Conseils d'Antoine
 - Kimi est le meilleur, Mamooth.ai. 
