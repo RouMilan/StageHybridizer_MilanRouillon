@@ -115,4 +115,67 @@ J'en profite pour installer Claude sur mon ordinateur.
 - Mistral est bon en français.
 - Anki est bon pour apprendre par coeur.
 
- 
+#### Dernier jour :
+
+Maintenant que j'ai installé Claude sur mon ordinateur, je m'instruit sur les connecteurs et les MCP disponibles à l'installation.
+
+J'essaye donc d'installer Windows MCP, mais il semble y avoir un problème.
+
+J'essaye donc d'installer le Connecteur Control Chrome, qui permet de contrôler les onglets chrome.
+
+Ensuite j'installe pdf-viewer, qui me permettra d'annoter les pdf.
+
+Je constate néanmoins que le reste des connecteurs ne m'interessent pas beaucoup. 
+
+J'installe ensuite ces 4 plug-ins :
+
+- Productivity
+- Engineering
+- Data
+- Pdf Viewer
+
+Et j'installe ces 2 Compétences :
+
+- mcp-builder
+- web-artifacts-builder
+
+Il faut maintenant que je comprenne comment marchent tous ces outils.
+
+Je pose pleins de questions à claude, en utilisant la compétence mcp-builder.
+
+Voici un résumé de ce que j'ai compris, en rapport avec Hybridizer :
+
+Les bases sont les suivantes : 
+
+- Protocole, le MCP est un serveur qui expose des "tools" exposé par mon serveur
+- les "tools" sont des fonctions qui permettent de structurer les données et de l'envoyer à l'IA.
+
+Je lance maintenant Claude sur la création d'un serveur MCP pour les repos basic-samples et hybridizer-io.github.io. 
+
+Après plusieurs tentatives, je me rends compte que c'est beaucoup plus compliqué que prévu, je continue quand meme.
+
+#### Deuxième Tentative de téléchargement par Aïmene :
+
+On s'est rendu compte que l'on pourrait peur être essayer de faire l'installation, mais utiliser VSCode à la place de VS2022.
+
+On reprends donc de l'étape 5; En partant du principe que vu qu'on utilise pas VS2022, il n'y a pas besoin d'installer le Toolchain C++.
+
+Aïmene utilise de préférence antigravity, l'équivalent de Visual Studio Code, fait pas Google, et on utilise donc celui là. 
+
+Après un premier echec dû au fait que l'installation était impossible depuis un dossier de System32, on réussit à installer Hybridizer depuis les lignes de commandes.
+
+Pour l'étape 6 : Git était déjà installé, donc il n'y a rien eu à faire. 
+
+Pour l'étape 7 : Comme pour moi, le code proposé ne fonctionnait pas si on le copie colle dans un projet, je décide donc de le supprimer de la page web car il induit en erreur.
+
+On passe ensuite aux tests par le terminal, et le git clone se fait sans soucis. Lors du build des exemples, nous avons un problème avec le build.
+
+Première piste : Repasser par l'étape 4, et installer le Toolchain C++.
+
+Aïmene installe donc VSCommunity2022, et réussit à mettre les mêmes caractéristiques que sur mon PC, et on refait le test.
+
+Encore une erreur, mais cette fois-ci, le build se lance mais donne une erreur.
+
+Ensuite, il écrit : ```dotnet tool install -g Hybridizer```, et le code fonctionne. 
+
+C'est réussi ! 
